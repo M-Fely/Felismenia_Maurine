@@ -1,0 +1,241 @@
+.hero {
+  min-height: calc(100vh - 85px);
+  padding: 100px 8%;
+  display: flex;
+  align-items: center;
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  background:
+    radial-gradient(
+      ellipse at 75% 35%,
+      rgba(241, 90, 36, 0.12),
+      transparent 45%
+    ),
+    var(--bg-primary);
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background-image:
+    linear-gradient(rgba(241, 90, 36, 0.045) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(241, 90, 36, 0.045) 1px, transparent 1px);
+  background-size: 55px 55px;
+  mask-image: linear-gradient(to right, black, transparent 85%);
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  width: 420px;
+  height: 420px;
+  right: 5%;
+  top: 15%;
+  border-radius: 50%;
+  background: rgba(241, 90, 36, 0.09);
+  filter: blur(110px);
+  pointer-events: none;
+  animation: heroGlow 7s ease-in-out infinite alternate;
+}
+
+.hero-content {
+  max-width: 850px;
+}
+
+.hero-intro {
+  color: var(--accent-gold);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  margin-bottom: 25px;
+}
+
+.hero h1 {
+  font-size: clamp(42px, 6vw, 76px);
+  line-height: 1.12;
+  font-weight: 700;
+  letter-spacing: -3px;
+  color: var(--text-primary);
+  margin-bottom: 25px;
+}
+
+.hero h1 span {
+  color: var(--accent-gold);
+  text-shadow: 0 0 35px rgba(241, 90, 36, 0.2);
+}
+
+.hero-description {
+  max-width: 620px;
+  color: var(--text-secondary);
+  font-size: 17px;
+  line-height: 1.8;
+  margin-bottom: 35px;
+}
+
+.hero-buttons {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.hero-primary-btn,
+.hero-secondary-btn {
+  padding: 14px 24px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.hero-primary-btn {
+  background-color: var(--accent-gold);
+  color: #ffffff;
+  box-shadow: 0 0 20px rgba(241, 90, 36, 0.15);
+}
+
+.hero-primary-btn:hover {
+  background-color: var(--accent-gold-hover);
+  color: #101010;
+  transform: translateY(-4px);
+  box-shadow: 0 8px 30px rgba(241, 90, 36, 0.3);
+}
+
+.hero-secondary-btn {
+  border: 1px solid var(--accent-gold);
+  color: var(--accent-gold);
+}
+
+.hero-secondary-btn:hover {
+  background-color: var(--accent-gold);
+  color: #ffffff;
+  transform: translateY(-4px);
+  box-shadow: 0 8px 25px rgba(241, 90, 36, 0.2);
+}
+
+.hero-primary-btn:focus-visible,
+.hero-secondary-btn:focus-visible {
+  outline: 2px solid var(--text-primary);
+  outline-offset: 4px;
+}
+
+.hero-interests {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  margin-top: 85px;
+  padding-top: 25px;
+  border-top: 1px solid var(--border-color);
+}
+
+.hero-interests span {
+  color: var(--text-muted);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  transition: color 0.3s ease;
+}
+
+.hero-interests span:hover {
+  color: var(--accent-gold);
+}
+
+@keyframes heroEntrance {
+  from {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes heroGlow {
+  from {
+    opacity: 0.5;
+    transform: translate(0, 0) scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-35px, 25px) scale(1.15);
+  }
+}
+
+@media (max-width: 650px) {
+  .hero {
+    min-height: calc(100vh - 75px);
+    padding: 85px 6%;
+  }
+
+  .hero h1 {
+    letter-spacing: -2px;
+  }
+
+  .hero-description {
+    font-size: 15px;
+  }
+
+  .hero-interests {
+    gap: 18px;
+    margin-top: 60px;
+  }
+
+  .hero-interests span {
+    font-size: 10px;
+  }
+
+  .hero::after {
+    width: 280px;
+    height: 280px;
+    right: -15%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-content,
+  .hero-intro,
+  .hero h1,
+  .hero-description,
+  .hero-buttons,
+  .hero-interests {
+    animation: none;
+  }
+
+  .hero::after {
+    animation: none;
+  }
+
+  .hero-primary-btn,
+  .hero-secondary-btn,
+  .hero-interests span {
+    transition: none;
+  }
+}
+
+.hero .hero-content {
+  opacity: 0;
+  transform: translateY(35px);
+  transition:
+    opacity 0.8s ease,
+    transform 0.8s ease;
+}
+
+.hero.is-visible .hero-content {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero .hero-content {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}

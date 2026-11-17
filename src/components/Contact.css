@@ -1,0 +1,150 @@
+.contact {
+  padding: 110px 8%;
+  background-color: var(--bg-secondary);
+  text-align: center;
+}
+
+.contact-container {
+  max-width: 750px;
+  margin: 0 auto;
+}
+
+.contact-container h2 {
+  color: var(--text-primary);
+  font-size: clamp(32px, 4vw, 48px);
+  letter-spacing: -1.5px;
+  line-height: 1.3;
+  margin-bottom: 20px;
+}
+
+.contact-container h2 span {
+  color: var(--accent-gold);
+}
+
+.contact-description {
+  color: var(--text-secondary);
+  font-size: 16px;
+  line-height: 1.8;
+  margin-bottom: 35px;
+}
+
+.contact-email {
+  display: inline-block;
+  padding: 14px 26px;
+  background-color: var(--accent-gold);
+  color: #ffffff;
+  border-radius: 5px;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 600;
+  transition: 0.3s ease;
+}
+
+.contact-email:hover {
+  background-color: var(--accent-gold-hover);
+  color: #101010;
+}
+
+.contact-links {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  margin-top: 35px;
+}
+
+.contact-links a {
+  color: var(--text-secondary);
+  text-decoration: none;
+  font-size: 14px;
+  transition: color 0.3s ease;
+}
+
+.contact-links a:hover {
+  color: var(--accent-gold);
+}
+
+@media (max-width: 600px) {
+  .contact {
+    padding: 80px 6%;
+  }
+}
+
+.contact-email-address {
+  color: var(--text-muted);
+  font-size: 13px;
+  margin-top: 15px;
+  letter-spacing: 0.5px;
+}
+
+.contact-container {
+  opacity: 0;
+  transform: scale(0.96);
+  transition:
+    opacity 0.9s ease,
+    transform 0.9s ease;
+}
+
+.contact-container.is-visible {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.contact-container > * {
+  opacity: 0;
+  transform: translateY(18px);
+  transition:
+    opacity 0.7s ease,
+    transform 0.7s ease;
+}
+
+.contact-container.is-visible > * {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.contact-container.is-visible > *:nth-child(1) {
+  transition-delay: 0.1s;
+}
+
+.contact-container.is-visible > *:nth-child(2) {
+  transition-delay: 0.2s;
+}
+
+.contact-container.is-visible > *:nth-child(3) {
+  transition-delay: 0.35s;
+}
+
+.contact-container.is-visible > *:nth-child(4) {
+  transition-delay: 0.5s;
+}
+
+.contact-container.is-visible > *:nth-child(5) {
+  transition-delay: 0.65s;
+}
+
+.contact-email {
+  box-shadow: 0 0 0 rgba(241, 90, 36, 0);
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease,
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.contact-container.is-visible .contact-email {
+  box-shadow: 0 0 22px rgba(241, 90, 36, 0.18);
+}
+
+.contact-email:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 0 28px rgba(241, 90, 36, 0.35);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .contact-container,
+  .contact-container > * {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
