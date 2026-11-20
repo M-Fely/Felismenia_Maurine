@@ -32,6 +32,7 @@ function Hero() {
         </div>
 
         <div className="hero-interests">
+          <p className="interests-label">AREAS OF INTEREST</p>
           <span>BACKEND DEVELOPMENT</span>
           <span>CYBERSECURITY</span>
           <span>SOFTWARE ENGINEERING</span>

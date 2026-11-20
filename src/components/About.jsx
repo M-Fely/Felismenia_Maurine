@@ -16,7 +16,8 @@ function About() {
 
         <div className="about-content reveal reveal-right" ref={contentRef}>
           <p className="about-description">
-            I'm a Computer Science student with a growing interest in backend
+            I'm <strong className="about-name">Maurine Felismenia</strong>, a
+            Computer Science student with a growing interest in backend
             development and cybersecurity. I enjoy understanding how systems
             work behind the scenes and building applications that solve
             practical problems.

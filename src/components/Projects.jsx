@@ -44,8 +44,16 @@ function Projects() {
   const scrollProjects = (direction) => {
     if (!projectsRef.current) return;
 
-    projectsRef.current.scrollBy({
-      left: direction * 544,
+    const container = projectsRef.current;
+    const card = container.querySelector(".project-card");
+
+    if (!card) return;
+
+    const cardWidth = card.getBoundingClientRect().width;
+    const gap = parseFloat(getComputedStyle(container).columnGap) || 0;
+
+    container.scrollBy({
+      left: direction * (cardWidth + gap),
       behavior: "smooth",
     });
   };
