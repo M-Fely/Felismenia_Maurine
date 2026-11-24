@@ -1,16 +1,43 @@
-# React + Vite
+Personal Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A personal developer portfolio showcasing my background, technical skills, projects, and experience as a Computer Science student. This portfolio serves as a platform to present my development journey, highlight the projects I have worked on, and provide ways to connect with me.
 
-Currently, two official plugins are available:
+Live Demo
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+View My Portfolio
 
-## React Compiler
+Technologies Used
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+React.js – Building the user interface using reusable components.
 
-## Expanding the ESLint configuration
+JavaScript – Implementing application functionality.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+HTML5 – Structuring the web content.
+
+CSS3 – Styling and designing the portfolio.
+
+Vite – Development environment and build tool.
+
+Git and GitHub – Version control and source code management.
+
+Vercel – Portfolio deployment and hosting.
+
+Features
+
+Home Section – Introduction and overview.
+
+About Section – Background and information about me.
+
+Skills Section – Displays my technical skills and areas of knowledge.
+
+Projects Section – Showcases my development projects and their details.
+
+Case Study Section – Presents additional information about selected projects.
+
+Contact Section – Provides ways to reach me.
+
+Responsive Design – Supports different screen sizes and devices.
+
+Navigation Bar – Allows visitors to navigate between portfolio sections.
+
+Project Structure
